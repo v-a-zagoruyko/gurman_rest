@@ -1,0 +1,120 @@
+html,
+body,
+* {
+  font-family: "Roboto Slab", serif;
+  font-size: 14px;
+  font-weight: 200;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.brand {
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.brand__image {
+  height: 120px;
+}
+
+.separator {
+  height: 550px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.section {
+  padding: 0 22% 100px 22%;
+}
+
+.section__content {
+  overflow: hidden;
+  margin-top: -100px;
+  padding: 0 22px;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+
+
+.section__content h1, .section__content h2 {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #4a4a4a;
+  font-size: 32px;
+  background-color: #ffffff;
+}
+
+.section__content p {
+  color: #4a4a4a;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 1.5;
+}
+
+.section__content span {
+  margin-top: 12px;
+  display: block;
+  color: #4a4a4a;
+  font-size: 12px;
+  font-weight: 200;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.section__content .link {
+  margin-top: 16px;
+  display: block;
+  color: #4a4a4a;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.section__content .btn {
+  margin: 24px auto 0 auto;
+}
+
+.btn {
+  padding: 0 24px;
+  width: 200px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  border: 0;
+  background-color: #e2ae7f;
+  transition: opacity 0.2s linear;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.map {
+  margin-top: 24px;
+}
+
+@media (max-width: 768px) {
+  .separator {
+    height: 350px;
+  }
+
+  .section {
+    padding: 0 5% 50px 5%;
+  }
+
+  .section__content .link {
+    margin-top: 12px;
+    font-size: 16px;
+  }
+}
