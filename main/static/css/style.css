@@ -40,8 +40,8 @@ body,
   background-color: #ffffff;
 }
 
-
-.section__content h1, .section__content h2 {
+.section__content h1,
+.section__content h2 {
   height: 100px;
   display: flex;
   justify-content: center;
@@ -66,6 +66,13 @@ body,
   font-weight: 200;
   line-height: 1.5;
   text-align: center;
+}
+
+.section__content img {
+  margin-top: 20px;
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
 }
 
 .section__content .link {
@@ -116,5 +123,9 @@ body,
   .section__content .link {
     margin-top: 12px;
     font-size: 16px;
+  }
+
+  .section__content img {
+    height: 150px;
   }
 }

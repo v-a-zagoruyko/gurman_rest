@@ -20,6 +20,11 @@
     />
     <link rel="stylesheet" href="{% static 'css/reset.css' %}" />
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'gallery/photoswipe.css' %}" />
+    <link rel="stylesheet" href="{% static 'gallery/default-skin/default-skin.css' %}" />
+    <script src="{% static 'gallery/photoswipe.min.js' %}"></script> 
+    <script src="{% static 'gallery/photoswipe-ui-default.min.js' %}"></script> 
   </head>
   <body>
     <div class="brand">
@@ -32,6 +37,7 @@
     ></aside>
     <section class="section">
       <div class="section__content">
+        <img src="{% static 'images/card-1.jpg' %}" />
         <h1>Ресторан "Гурман"</h1>
         <p>
           Попадая в стены ресторана Gurman, вновь вспоминаешь эти прекрасные
@@ -39,6 +45,7 @@
           выполнен в элегантной манере, но с яркими и современными решениями в
           виде бесподобных кованых диванов.
         </p>
+        {% comment %} <a href="#!" id="run-gallery" class="btn">Галерея зала</a> {% endcomment %}
         <a href="{%static 'docs/day-menu.pdf'%}" target="_blank" class="btn"
           >Посмотреть меню</a
         >
@@ -52,6 +59,7 @@
     ></aside>
     <section class="section">
       <div class="section__content">
+        <img src="{% static 'images/card-2.jpg' %}" />
         <h2>Новогоднее меню</h2>
         <p>
           Помещение ресторана отличается вместительной площадью, высокими
@@ -75,6 +83,7 @@
     ></aside>
     <section class="section">
       <div class="section__content">
+        <img src="{% static 'images/card-3.jpg' %}" />
         <h2>Контакты</h2>
         <p>
           Gurman - ресторан, куда хочется вернуться, потому что «классика»
@@ -103,5 +112,9 @@
         </div>
       </div>
     </section>
+
+    {% include 'gallery.html' %}
+
+    {% comment %} <script src="{% static 'js/script.js' %}"></script> {% endcomment %}
   </body>
 </html>
