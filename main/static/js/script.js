@@ -1,51 +1,52 @@
 const images = [
   {
-    src: "http://localhost:8000/static/images/gallery/1.jpg",
+    src: "https://xn----7sbblh9beecscegov.xn--p1ai/static/images/gallery/1.jpg",
     w: 0,
     h: 0,
   },
   {
-    src: "http://localhost:8000/static/images/gallery/2.jpg",
+    src: "https://xn----7sbblh9beecscegov.xn--p1ai/static/images/gallery/2.jpg",
     w: 0,
     h: 0,
   },
   {
-    src: "http://localhost:8000/static/images/gallery/3.jpg",
+    src: "https://xn----7sbblh9beecscegov.xn--p1ai/static/images/gallery/3.jpg",
     w: 0,
     h: 0,
   },
   {
-    src: "http://localhost:8000/static/images/gallery/4.jpg",
+    src: "https://xn----7sbblh9beecscegov.xn--p1ai/static/images/gallery/4.jpg",
     w: 0,
     h: 0,
   },
   {
-    src: "http://localhost:8000/static/images/gallery/5.jpg",
+    src: "https://xn----7sbblh9beecscegov.xn--p1ai/static/images/gallery/5.jpg",
     w: 0,
     h: 0,
   },
   {
-    src: "http://localhost:8000/static/images/gallery/6.jpg",
+    src: "https://xn----7sbblh9beecscegov.xn--p1ai/static/images/gallery/6.jpg",
     w: 0,
     h: 0,
   },
   {
-    src: "http://localhost:8000/static/images/gallery/7.jpg",
+    src: "https://xn----7sbblh9beecscegov.xn--p1ai/static/images/gallery/7.jpg",
     w: 0,
     h: 0,
   },
   {
-    src: "http://localhost:8000/static/images/gallery/8.jpg",
+    src: "https://xn----7sbblh9beecscegov.xn--p1ai/static/images/gallery/8.jpg",
     w: 0,
     h: 0,
   },
   {
-    src: "http://localhost:8000/static/images/gallery/9.jpg",
+    src: "https://xn----7sbblh9beecscegov.xn--p1ai/static/images/gallery/9.jpg",
     w: 0,
     h: 0,
   },
   {
-    src: "http://localhost:8000/static/images/gallery/10.jpg",
+    src:
+      "https://xn----7sbblh9beecscegov.xn--p1ai/static/images/gallery/10.jpg",
     w: 0,
     h: 0,
   },
