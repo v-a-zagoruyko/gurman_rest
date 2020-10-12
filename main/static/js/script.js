@@ -1,32 +1,86 @@
-var pswpElement = document.querySelectorAll(".pswp")[0];
-
-// build items array
-var items = [
+const images = [
   {
-    src: "https://placekitten.com/600/400",
-    w: 600,
-    h: 400,
+    src: "http://localhost:8000/static/images/gallery/1.jpg",
+    w: 0,
+    h: 0,
   },
   {
-    src: "https://placekitten.com/1200/900",
-    w: 1200,
-    h: 900,
+    src: "http://localhost:8000/static/images/gallery/2.jpg",
+    w: 0,
+    h: 0,
+  },
+  {
+    src: "http://localhost:8000/static/images/gallery/3.jpg",
+    w: 0,
+    h: 0,
+  },
+  {
+    src: "http://localhost:8000/static/images/gallery/4.jpg",
+    w: 0,
+    h: 0,
+  },
+  {
+    src: "http://localhost:8000/static/images/gallery/5.jpg",
+    w: 0,
+    h: 0,
+  },
+  {
+    src: "http://localhost:8000/static/images/gallery/6.jpg",
+    w: 0,
+    h: 0,
+  },
+  {
+    src: "http://localhost:8000/static/images/gallery/7.jpg",
+    w: 0,
+    h: 0,
+  },
+  {
+    src: "http://localhost:8000/static/images/gallery/8.jpg",
+    w: 0,
+    h: 0,
+  },
+  {
+    src: "http://localhost:8000/static/images/gallery/9.jpg",
+    w: 0,
+    h: 0,
+  },
+  {
+    src: "http://localhost:8000/static/images/gallery/10.jpg",
+    w: 0,
+    h: 0,
   },
 ];
 
-// define options (if needed)
-var options = {
-  // optionName: 'option value'
-  // for example:
-  index: 0, // start at first slide
+const options = {
+  index: 0,
+  closeOnScroll: false,
 };
 
-// Initializes and opens PhotoSwipe
-var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
-gallery.init(0);
+const galleryContainer = document.querySelectorAll(".pswp")[0];
+const galleryToggle = document.getElementById("run-gallery");
 
-var galleryToggle = document.getElementById("run-gallery");
+galleryToggle.addEventListener("click", (e) => {
+  e.preventDefault();
 
-galleryToggle.addEventListener("click", () => {
-  console.log(gallery);
+  let gallery = new PhotoSwipe(
+    galleryContainer,
+    PhotoSwipeUI_Default,
+    images,
+    options
+  );
+  gallery.listen("gettingData", function (index, item) {
+    if (item.w < 1 || item.h < 1) {
+      // unknown size
+      var img = new Image();
+      img.onload = function () {
+        item.w = this.width;
+        item.h = this.height;
+        gallery.invalidateCurrItems();
+        gallery.updateSize(true);
+      };
+      img.src = item.src;
+    }
+  });
+
+  gallery.init();
 });

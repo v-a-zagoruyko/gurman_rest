@@ -2,119 +2,90 @@
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="" />
-    <meta
-      name="keywords"
-      content="гурман, ресторан, восточная кухня, турецкая кухня, европейская кухня, банкет, свадьба, юбилей"
-    />
-    <meta name="author" content="v.a.zagoruyko@yandex.ru" />
 
-    <title>"Гурман" - ресторан восточной кухни в Тюмени</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="description" content="" />
+  <meta name="keywords"
+    content="гурман, ресторан, восточная кухня, турецкая кухня, европейская кухня, банкет, свадьба, юбилей" />
+  <meta name="author" content="v.a.zagoruyko@yandex.ru" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;500;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="{% static 'css/reset.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <title>"Гурман" - ресторан восточной кухни в Тюмени</title>
 
-    <link rel="stylesheet" href="{% static 'gallery/photoswipe.css' %}" />
-    <link rel="stylesheet" href="{% static 'gallery/default-skin/default-skin.css' %}" />
-    <script src="{% static 'gallery/photoswipe.min.js' %}"></script> 
-    <script src="{% static 'gallery/photoswipe-ui-default.min.js' %}"></script> 
-  </head>
-  <body>
-    <div class="brand">
-      <img src="{%static 'images/logo.png'%}" class="brand__image" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;500;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="{% static 'css/reset.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+  <link rel="stylesheet" href="{% static 'js/photoswipe/photoswipe.css' %}" />
+  <link rel="stylesheet" href="{% static 'js/photoswipe/default-skin/default-skin.css' %}" />
+</head>
+
+<body>
+  <div class="brand">
+    <img src="{% static 'images/logo.png'%}" class="brand__image" />
+  </div>
+
+  <aside class="separator" style="background-image: url({% static 'images/background-1.jpg' %})"></aside>
+  <section class="section">
+    <div class="section__content">
+      <img src="{% static 'images/card-1.jpg' %}" />
+      <h1>Ресторан "Гурман"</h1>
+      <p>
+        Попадая в стены ресторана Gurman, вновь вспоминаешь эти прекрасные
+        традиции и понимаешь, что нет ничего лучше классики! Дизайн интерьера
+        выполнен в элегантной манере, но с яркими и современными решениями в
+        виде бесподобных кованых диванов.
+      </p>
+      <a href="#!" id="run-gallery" class="btn">Галерея зала</a>
+      <a href="{% static 'docs/day-menu.pdf' %}" target="_blank" class="btn">Посмотреть меню</a>
+      <span>Меню в ресторане может незначительно отличаться</span>
     </div>
+  </section>
 
-    <aside
-      class="separator"
-      style="background-image: url({%static 'images/background-1.jpg'%})"
-    ></aside>
-    <section class="section">
-      <div class="section__content">
-        <img src="{% static 'images/card-1.jpg' %}" />
-        <h1>Ресторан "Гурман"</h1>
-        <p>
-          Попадая в стены ресторана Gurman, вновь вспоминаешь эти прекрасные
-          традиции и понимаешь, что нет ничего лучше классики! Дизайн интерьера
-          выполнен в элегантной манере, но с яркими и современными решениями в
-          виде бесподобных кованых диванов.
-        </p>
-        {% comment %} <a href="#!" id="run-gallery" class="btn">Галерея зала</a> {% endcomment %}
-        <a href="{%static 'docs/day-menu.pdf'%}" target="_blank" class="btn"
-          >Посмотреть меню</a
-        >
-        <span>Меню в ресторане может незначительно отличаться</span>
+  <aside class="separator" style="background-image: url({% static 'images/background-2.jpg' %})"></aside>
+  <section class="section">
+    <div class="section__content">
+      <img src="{% static 'images/card-2.jpg' %}" />
+      <h2>Новогоднее меню</h2>
+      <p>
+        Помещение ресторана отличается вместительной площадью, высокими
+        потолками и большими панорамными окнами. Лаконичное и безмятежное
+        убранство формирует тёплую, гостеприимную обстановку, замечательно
+        подходящую для отдыха, неспешного общения и приятного времяпровождения
+        в компании близких и друзей.
+      </p>
+      <a href="{% static 'docs/new-year-menu.pdf' %}" target="_blank" class="btn">Новогоднее меню</a>
+    </div>
+  </section>
+
+  <aside class="separator" style="background-image: url({% static 'images/background-3.jpg' %})"></aside>
+  <section class="section">
+    <div class="section__content">
+      <img src="{% static 'images/card-3.jpg' %}" />
+      <h2>Контакты</h2>
+      <p>
+        Gurman - ресторан, куда хочется вернуться, потому что «классика»
+        всегда в моде!
+      </p>
+      <a href="https://yandex.ru/maps/-/CCQ~A6SLhA" class="link">Адрес: Линейная 66</a>
+      <a href="tel:+79044992299" class="link">Телефон: +7 (9044) 99-22-99</a>
+      <a href="https://web.whatsapp.com/send?phone=79044992299" class="link">WhatsApp: +7 (9044) 99-22-99</a>
+      <a href="viber://chat?number=79044992299" class="link">Viber: +7 (9044) 99-22-99</a>
+      <a href="https://www.instagram.com/restoran.gurman/" class="link">Instagram: @restoran.gurman</a>
+      <div class="map">
+        <script type="text/javascript" charset="utf-8" async
+          src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A3837c9fbf8dc43bfd3735dca284c9546fc5bd60de4083a7ed5d093112dc774f3&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <aside
-      class="separator"
-      style="background-image: url({%static 'images/background-2.jpg'%})"
-    ></aside>
-    <section class="section">
-      <div class="section__content">
-        <img src="{% static 'images/card-2.jpg' %}" />
-        <h2>Новогоднее меню</h2>
-        <p>
-          Помещение ресторана отличается вместительной площадью, высокими
-          потолками и большими панорамными окнами. Лаконичное и безмятежное
-          убранство формирует тёплую, гостеприимную обстановку, замечательно
-          подходящую для отдыха, неспешного общения и приятного времяпровождения
-          в компании близких и друзей.
-        </p>
-        <a
-          href="{%static 'docs/new-year-menu.pdf'%}"
-          target="_blank"
-          class="btn"
-          >Новогоднее меню</a
-        >
-      </div>
-    </section>
+  {% include 'block/gallery.html' %}
 
-    <aside
-      class="separator"
-      style="background-image: url({%static 'images/background-3.jpg'%})"
-    ></aside>
-    <section class="section">
-      <div class="section__content">
-        <img src="{% static 'images/card-3.jpg' %}" />
-        <h2>Контакты</h2>
-        <p>
-          Gurman - ресторан, куда хочется вернуться, потому что «классика»
-          всегда в моде!
-        </p>
-        <a href="https://yandex.ru/maps/-/CCQ~A6SLhA" class="link"
-          >Адрес: Линейная 66</a
-        >
-        <a href="tel:+79044992299" class="link">Телефон: +7 (9044) 99-22-99</a>
-        <a href="https://web.whatsapp.com/send?phone=79044992299" class="link"
-          >WhatsApp: +7 (9044) 99-22-99</a
-        >
-        <a href="viber://chat?number=79044992299" class="link"
-          >Viber: +7 (9044) 99-22-99</a
-        >
-        <a href="https://www.instagram.com/restoran.gurman/" class="link"
-          >Instagram: @restoran.gurman</a
-        >
-        <div class="map">
-          <script
-            type="text/javascript"
-            charset="utf-8"
-            async
-            src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A3837c9fbf8dc43bfd3735dca284c9546fc5bd60de4083a7ed5d093112dc774f3&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"
-          ></script>
-        </div>
-      </div>
-    </section>
+  <script src="{% static 'js/photoswipe/photoswipe.min.js' %}"></script>
+  <script src="{% static 'js/photoswipe/photoswipe-ui-default.min.js' %}"></script>
+  <script src="{% static 'js/script.js' %}"></script>
+</body>
 
-    {% include 'gallery.html' %}
-
-    {% comment %} <script src="{% static 'js/script.js' %}"></script> {% endcomment %}
-  </body>
 </html>
