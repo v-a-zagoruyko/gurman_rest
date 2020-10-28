@@ -10,3 +10,6 @@ def index(request):
     }
 
     return render(request, 'index.html', context=context)
+
+def tour(request):
+    return render(request, 'tour.html', context={})
