@@ -19,8 +19,8 @@ class Menu(models.Model):
     description = models.CharField(max_length=512, blank=True, null=True)
     cost = models.PositiveSmallIntegerField()
     sale = models.PositiveSmallIntegerField(blank=True, null=True)
-    weight = models.PositiveSmallIntegerField()
-    image = models.ImageField(upload_to='menu')
+    weight = models.CharField(max_length=16, blank=True, null=True)
+    image = models.ImageField(upload_to='menu', blank=True, null=True)
 
     def __str__(self):
         return self.title
