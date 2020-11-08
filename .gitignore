@@ -1,8 +1,12 @@
 venv/
 
+*/__pycache__
+gurman_rest/__pycache__
+*/__pycache__/*
 main/__pycache__
 main/static/admin/
 main/media/admin/
+main/migrations/__pycache__
 
 .DS_Store
 db.sqlite3

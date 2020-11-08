@@ -87,6 +87,66 @@ body,
   margin: 24px auto 0 auto;
 }
 
+.menu__table {
+  width: 100%;
+}
+
+.menu__table tr td {
+  padding: 10px;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.menu__table tr h6 {
+  margin-top: 12px;
+  margin-bottom: 8px;
+  text-align: center;
+  font-size: 20px !important;
+  line-height: 1.5;
+  font-weight: 500 !important;
+}
+
+.menu__table th:first-child,
+.menu__table td:first-child {
+  padding: 0;
+  text-align: left;
+}
+
+.menu__table th:last-child,
+.menu__table td:last-child {
+  min-width: 50px;
+  padding: 0;
+  text-align: right;
+}
+
+.menu__table tr td span {
+  display: block;
+  font-size: 13px;
+}
+
+.menu h1,
+.menu h2 {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #4a4a4a;
+  font-size: 32px;
+  background-color: #ffffff;
+}
+
+.menu p {
+  color: #4a4a4a;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 1.5;
+}
+
+.menu__btn {
+  margin: 24px auto 0 auto;
+}
+
 .btn-group {
   margin: 18px -12px 0 -12px;
   display: flex;
