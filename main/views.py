@@ -17,3 +17,13 @@ def MainMenu(request):
     }
 
     return render(request, 'menu.html', context=context)
+
+def NewYearMenu(request):
+    specimen = MenuSpecimen.objects.get(title='Новогоднее меню')
+
+    context = {
+        'specimen': specimen,
+        'menu': Menu.objects.filter(specimen=specimen),
+    }
+
+    return render(request, 'menu.html', context=context)
