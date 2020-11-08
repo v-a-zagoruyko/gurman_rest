@@ -87,6 +87,18 @@ body,
   margin: 24px auto 0 auto;
 }
 
+.btn-group {
+  margin: 18px -12px 0 -12px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-group .btn {
+  margin: 8px 12px;
+  padding: 0 10px;
+}
+
 .btn {
   padding: 0 24px;
   width: 200px;
@@ -127,5 +139,9 @@ body,
 
   .section__content img {
     height: 150px;
+  }
+
+  .btn-group .btn {
+    margin: 12px 0;
   }
 }
