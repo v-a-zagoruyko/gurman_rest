@@ -74,9 +74,9 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '../main/static/'
+STATIC_ROOT = '/home/web/gurman_rest/main/static/'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '../main/media/'
+MEDIA_ROOT = '/home/web/gurman_rest/main/media/'
 
 FILE_UPLOAD_PERMISSIONS=0o755
