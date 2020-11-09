@@ -18,4 +18,4 @@ class MenuAdmin(admin.ModelAdmin):
 
     image_tag.short_description = ''
 
-    list_display = ('image_tag', 'kind', 'title', 'cost', 'weight', )
+    list_display = ('image_tag', 'specimen', 'kind', 'title', 'description' )
