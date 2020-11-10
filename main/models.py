@@ -14,7 +14,7 @@ class MenuKind(models.Model):
 
 class Menu(models.Model):
     specimen = models.ForeignKey(MenuSpecimen, on_delete=models.CASCADE, blank=True, null=True, related_name='specimen')
-    kind = models.ForeignKey(MenuKind, on_delete=models.CASCADE, , blank=True, null=True, related_name='kind')
+    kind = models.ForeignKey(MenuKind, on_delete=models.CASCADE, blank=True, null=True, related_name='kind')
     title = models.CharField(max_length=128)
     description = models.CharField(max_length=512, blank=True, null=True)
     cost = models.PositiveSmallIntegerField(blank=True, null=True,)

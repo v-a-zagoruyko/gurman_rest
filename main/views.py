@@ -13,7 +13,7 @@ def MainMenu(request):
 
     context = {
         'specimen': specimen,
-        'menu': Menu.objects.filter(specimen=specimen),
+        'menu': Menu.objects.filter(specimen=specimen).order_by('kind'),
     }
 
     return render(request, 'menu.html', context=context)
@@ -23,7 +23,7 @@ def NewYearMenu(request):
 
     context = {
         'specimen': specimen,
-        'menu': Menu.objects.filter(specimen=specimen),
+        'menu': Menu.objects.filter(specimen=specimen).order_by('kind'),
     }
 
     return render(request, 'menu.html', context=context)

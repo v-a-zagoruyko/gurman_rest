@@ -32,20 +32,22 @@
       </thead>
       <tbody>
         {% for i in menu %}
-          {% ifchanged i.kind %}
-            <tr>
-              <td colspan="3"><h6>{{ i.kind }}</h6></td>
-            </tr>
-          {% endifchanged %}
+          {% if i.kind %}
+            {% ifchanged i.kind %}
+              <tr>
+                <td colspan="3"><h6>{{ i.kind }}</h6></td>
+              </tr>
+            {% endifchanged %}
+          {% endif %}
           <tr>
-            <td>{{ i.weight }}</td>
+            <td>{% if i.weight %}{{ i.weight }}{% endif %}</td>
             <td>
               {{ i.title }}
               {% if i.description %}
                 <span>{{ i.description }}</span>
               {% endif %}
             </td>
-            <td>{{ i.cost }} ₽</td>
+            <td>{% if i.cost %}{{ i.cost }} ₽{% endif %}</td>
           </tr>
         {% endfor %}
       </tbody>
