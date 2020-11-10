@@ -27,3 +27,13 @@ def NewYearMenu(request):
     }
 
     return render(request, 'menu.html', context=context)
+
+def CaucasusMenu(request):
+    specimen = MenuSpecimen.objects.get(title='Кавказская кухня')
+
+    context = {
+        'specimen': specimen,
+        'menu': Menu.objects.filter(specimen=specimen).order_by('kind'),
+    }
+
+    return render(request, 'card_menu.html', context=context)
