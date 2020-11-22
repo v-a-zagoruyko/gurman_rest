@@ -52,6 +52,22 @@
     </div>
   </section>
 
+  <aside class="separator" style="background-image: url({% static 'images/background-4.jpg' %})"></aside>
+  <section class="section">
+    <div class="section__content">
+      <img src="{% static 'images/card-4.jpg' %}" />
+      <h2>Кавказская кухня на вынос</h2>
+      {% comment %} <p>
+        Помещение ресторана отличается вместительной площадью, высокими
+        потолками и большими панорамными окнами. Лаконичное и безмятежное
+        убранство формирует тёплую, гостеприимную обстановку, замечательно
+        подходящую для отдыха, неспешного общения и приятного времяпровождения
+        в компании близких и друзей.
+      </p> {% endcomment %}
+      <a href="{% url 'delivery_menu' %}" target="_blank" class="btn">Меню на вынос</a>
+    </div>
+  </section>
+
   <aside class="separator" style="background-image: url({% static 'images/background-2.jpg' %})"></aside>
   <section class="section">
     <div class="section__content">

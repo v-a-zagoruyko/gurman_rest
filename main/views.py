@@ -37,3 +37,13 @@ def CaucasusMenu(request):
     }
 
     return render(request, 'card_menu.html', context=context)
+
+def DeliveryMenu(request):
+    specimen = MenuSpecimen.objects.get(title='На вынос')
+
+    context = {
+        'specimen': specimen,
+        'menu': Menu.objects.filter(specimen=specimen).order_by('kind'),
+    }
+
+    return render(request, 'menu.html', context=context)
