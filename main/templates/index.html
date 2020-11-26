@@ -23,9 +23,17 @@
 </head>
 
 <body>
-  <div class="brand">
+  <!-- <div class="brand">
     <img src="{% static 'images/logo.png'%}" class="brand__image" />
-  </div>
+  </div> -->
+  
+  <aside class="separator" style="background-image: url({% static 'images/background-4.jpg' %})"></aside>
+  <section class="section">
+    <div class="section__content">
+      <img src="{% static 'images/card-4.jpg' %}" />
+      <a href="{% url 'delivery_menu' %}" target="_blank" class="btn btn--cta">Шаурма и шашлык на вынос</a>
+    </div>
+  </section>
 
   <aside class="separator" style="background-image: url({% static 'images/background-1.jpg' %})"></aside>
   <section class="section">
@@ -49,22 +57,6 @@
         <a href="{% url 'tour' %}" class="btn">Панорама зала</a>
       </div>
       <span>Меню в ресторане может незначительно отличаться</span>
-    </div>
-  </section>
-
-  <aside class="separator" style="background-image: url({% static 'images/background-4.jpg' %})"></aside>
-  <section class="section">
-    <div class="section__content">
-      <img src="{% static 'images/card-4.jpg' %}" />
-      <h2>Кавказская кухня на вынос</h2>
-      {% comment %} <p>
-        Помещение ресторана отличается вместительной площадью, высокими
-        потолками и большими панорамными окнами. Лаконичное и безмятежное
-        убранство формирует тёплую, гостеприимную обстановку, замечательно
-        подходящую для отдыха, неспешного общения и приятного времяпровождения
-        в компании близких и друзей.
-      </p> {% endcomment %}
-      <a href="{% url 'delivery_menu' %}" target="_blank" class="btn">Меню на вынос</a>
     </div>
   </section>
 
