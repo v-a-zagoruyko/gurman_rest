@@ -4,54 +4,47 @@
 <html>
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-  <meta name="description" content="" />
-  <meta name="keywords"
-    content="гурман, ресторан, восточная кухня, турецкая кухня, европейская кухня, банкет, свадьба, юбилей" />
-  <meta name="author" content="v.a.zagoruyko@yandex.ru" />
-
-  <title>"Гурман" - ресторан восточной кухни в Тюмени</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;500;800&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="{% static 'css/reset.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  {% include 'block/head.html' %}
 </head>
 
 <body>
-  <section class="section menu">
-    <h2>{{ specimen.title }}</h2>
-    <table class="menu__table">
+  <div class="pattern"></div>
+  <section class="menu">
+    <h1 class="menu-title">{{ title }}</h1>
+
+    <table class="menu">
       <thead>
         <tr>
           <th>Вес</th>
-          <th></th>
+          <th>Наименование</th>
           <th>Цена</th>
         </tr>
       </thead>
       <tbody>
-        {% for i in menu %}
-          {% if i.kind %}
-            {% ifchanged i.kind %}
+        {% for dish in menu %}
+
+          {% if dish.category %}
+            {% ifchanged dish.category %}
               <tr>
-                <td colspan="3"><h6>{{ i.kind }}</h6></td>
+                <td class="menu__category" colspan="3">{{ dish.category }}</td>
               </tr>
             {% endifchanged %}
           {% endif %}
+
           <tr>
-            <td>{% if i.weight %}{{ i.weight }}{% endif %}</td>
+            <td>{% if dish.weight %}{{ dish.weight }}{% endif %}</td>
+
             <td>
-              {{ i.title }}
-              {% if i.description %}
-                <span>{{ i.description }}</span>
-              {% endif %}
+              {{ dish.title }}
+              {% if dish.description %}<span class="menu__description">{{ dish.description }}</span>{% endif %}
             </td>
-            <td>{% if i.cost %}{{ i.cost }} ₽{% endif %}</td>
+
+            <td>{% if dish.cost %}{{ dish.cost }} ₽{% endif %}</td>
           </tr>
         {% endfor %}
       </tbody>
     </table>
+
     <a href="{% url 'index' %}" class="btn menu__btn">На главную</a>
   </section>
 

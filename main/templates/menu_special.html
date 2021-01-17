@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  {% include 'block/head.html' %}
+</head>
+
+<body>
+  <div class="pattern"></div>
+  <section class="menu-special">
+    <h1 class="menu-title">{{ title }}</h1>
+
+    <div class="menu-special__grid">
+    {% for dish in menu %}
+
+      {% if dish.category %}
+        {% ifchanged dish.category %}
+            <h6 class="menu-special__category">{{ dish.category }}</h6>
+        {% endifchanged %}
+      {% endif %}
+
+        <div class="menu-card">
+          <img
+            class="menu-card__img"
+            src="{% if dish.image %}{{ dish.image.url }}{% else %}{% static 'images/blank.png' %}{% endif %}"
+            alt="{{ dish.title }}"
+          >
+          <div class="menu-card__body">
+            <p class="menu-card__title">{{ dish.title }}</p>
+            {% if dish.description %}<span class="menu-card__description">{{ dish.description }}</span>{% endif %}
+            {% if dish.weight %}
+              <span class="menu-card__weight">Вес: {{ dish.weight }} грамм</span>
+            {% endif %}
+            <span class="menu-card__cost">{{ dish.cost }} ₽</span>
+          </div>
+        </div>
+    {% endfor %}
+    </div>
+
+    <a href="{% url 'index' %}" class="btn menu__btn">На главную</a>
+  </section>
+
+</body>
+
+</html>

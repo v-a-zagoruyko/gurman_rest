@@ -1,282 +1,419 @@
 html,
 body,
 * {
-  font-family: "Roboto Slab", serif;
-  font-size: 14px;
-  font-weight: 200;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
-.brand {
-  height: 140px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffffff;
+body {
+  position: relative;
 }
 
-.brand__image {
-  height: 120px;
+a {
+  transition: opacity .2s linear;
 }
 
-.separator {
-  height: 550px;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
-.section {
-  padding: 0 22% 100px 22%;
-}
-
-.section__content {
-  overflow: hidden;
-  margin-top: -100px;
-  padding: 0 22px;
-  border-radius: 4px;
-  background-color: #ffffff;
-}
-
-.section__content h1,
-.section__content h2 {
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #4a4a4a;
-  font-size: 32px;
-  background-color: #ffffff;
-}
-
-.section__content p {
-  color: #4a4a4a;
-  font-size: 16px;
-  font-weight: 200;
-  line-height: 1.5;
-}
-
-.section__content span {
-  margin-top: 12px;
-  display: block;
-  color: #4a4a4a;
-  font-size: 12px;
-  font-weight: 200;
-  line-height: 1.5;
-  text-align: center;
-}
-
-.section__content img {
-  margin-top: 20px;
-  height: 300px;
-  width: 100%;
-  object-fit: cover;
-}
-
-.section__content .link {
-  margin-top: 16px;
-  display: block;
-  color: #4a4a4a;
-  font-size: 20px;
-  font-weight: 200;
-}
-
-.section__content .btn {
-  margin: 24px auto 0 auto;
-}
-
-.menu__table {
-  width: 100%;
-}
-
-.menu__table tr td {
-  padding: 10px;
-  font-size: 15px;
-  line-height: 1.5;
-  font-weight: 500;
-}
-
-.menu__table tr h6 {
-  margin-top: 12px;
-  margin-bottom: 8px;
-  text-align: center;
-  font-size: 20px !important;
-  line-height: 1.5;
-  font-weight: 500 !important;
-}
-
-.menu__table th:first-child,
-.menu__table td:first-child {
-  padding: 0;
-  text-align: left;
-}
-
-.menu__table th:last-child,
-.menu__table td:last-child {
-  min-width: 50px;
-  padding: 0;
-  text-align: right;
-}
-
-.menu__table tr td span {
-  display: block;
-  font-size: 13px;
-}
-
-.menu h1,
-.menu h2 {
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #4a4a4a;
-  font-size: 32px;
-  background-color: #ffffff;
-}
-
-.menu p {
-  color: #4a4a4a;
-  font-size: 16px;
-  font-weight: 200;
-  line-height: 1.5;
-}
-
-.menu__btn {
-  margin: 24px auto 0 auto;
-}
-
-.btn-group {
-  margin: 18px -12px 0 -12px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.btn-group .btn {
-  margin: 8px 12px;
-  padding: 0 10px;
+a:hover {
+  opacity: .8;
 }
 
 .btn {
-  padding: 0 24px;
-  width: 200px;
-  height: 60px;
-  display: flex;
+  padding: 16px 24px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  font-size: 14px;
-  font-weight: 500;
-  text-transform: uppercase;
-  border: 0;
-  background-color: #e2ae7f;
-  transition: opacity 0.2s linear;
-}
-
-.btn:hover {
-  opacity: 0.9;
-}
-
-.btn--cta {
-  width: auto;
-  font-size: 18px;
+  font-family: 'Yeseva One', serif;
+  font-size: 16px;
   font-weight: 600;
-  background-color: #d0312d;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  border-radius: 6px;
+  background-color: #ff7200;
 }
 
-.map {
-  margin-top: 24px;
+.delimetr {
+  width: 100%;
+  height: 50px;
+  background-image: url('../images/patterns/line.png');
+  background-size: auto 50px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.food-card__container {
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.pattern {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1000;
+  width: 100%;
+  height: calc(100% + 40px);
+  background-image: url('../images/patterns/pattern.png');
+  background-size: 500px auto;
+  background-repeat: repeat-y;
+  opacity: .15;
+}
+
+@media (max-width: 768px) {
+  .pattern {
+    background-size: 200px auto;
+  }
+}
+
+nav.nav {
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  nav.nav {
+    justify-content: center;
+  }
+
+  nav.nav div {
+    display: none;
+  }
+}
+
+.nav__title {
+  font-family: 'Yeseva One', serif;
+  color: #000000;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+a.nav__link {
+  margin-left: 12px;
+  color: #000000;
+  font-family: 'Yeseva One', serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-bottom: 1px solid;
+  border-width: 2px;
+}
+
+.preview {
+  position: relative;
+  padding: 12px 20px;
+  width: 100%;
+  height: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../images/preview.jpg');
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .preview {
+    display: none;
+  }
+}
+
+.preview__title {
+  margin-bottom: 12px;
+  padding: 12px 14px;
+  font-family: 'Yeseva One', serif;
+  color: #000000;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.preview__content {
+  z-index: 2;
+}
+
+.preview__content .btn {
+  margin: 0 auto;
+  display: table;
+}
+
+section.section {
+  padding: 40px;
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  section.section {
+    padding: 0;
+    flex-direction: column;
+  }
+
+  section.section .btn {
+    margin-bottom: 10px;
+  }
+
+  .section__img, .section__info {
+    flex: 1 1 100%;
+  }
+}
+
+.section__img {
+  padding: 20px;
+  flex: 1 1 40%;
+}
+
+.section__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.section__info {
+  padding: 20px;
+  flex: 1 1 60%;
+}
+
+.section__title {
+  margin-bottom: 12px;
+  display: block;
+  font-family: 'Yeseva One', serif;
+  color: #000000;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.section__text {
+  margin-bottom: 12px;
+  display: block;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.section__link {
+  margin-bottom: 12px;
+  display: block;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.section__link b {
+  width: 100px;
+  display: inline-block;
+  font-family: 'Yeseva One', serif;
+  color: #000000;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+section.menu {
+  padding: 0 22% 100px 22%;
+}
+
+@media (max-width: 768px) {
+  section.menu {
+    padding: 0 5% 50px 5%;
+  }
+}
+
+.menu-title {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-family: 'Yeseva One', serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+section.menu-special {
+  padding: 0 12% 100px 12%;
+}
+
+@media (max-width: 768px) {
+  section.menu-special {
+    padding: 0 5% 50px 5%;
+  }
+}
+
+.menu-special__grid {
   display: flex;
   flex-wrap: wrap;
 }
 
-.food-card__container h2 {
-  flex: 1 1 100%;
+.menu-special__category {
+  width: 100%;
+  margin: 14px 0;
+  font-family: 'Yeseva One', serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
-.food-card__body {
-  padding: 6px 8px;
-  text-align: center;
-}
+/* Card Component */
 
-.food-card__cost {
-  margin-bottom: 20px !important;
-  font-size: 20px !important;
-}
-
-.food-card {
+.menu-card {
   overflow: hidden;
   margin: 12px;
-  width: calc(50% - 24px);
+  padding: 12px;
+  width: calc(33% - 36px);
   border-radius: 8px;
+  background-color: #ffffff;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
-  transition: box-shadow 0.2s linear;
 }
 
-.food-card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
+@media (max-width: 768px) {
+  .menu-card {
+    margin: 12px 0;
+    width: 100%;
+  }
 }
 
-.food-card img {
+.menu-card__img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
 
-.food-card h6 {
-  display: block;
-  margin-top: 8px;
-  margin-bottom: 4px;
-  color: #4a4a4a;
-  font-size: 20px;
-  font-weight: 400;
+.menu-card__body {
+  display: flex;
+  flex-direction: column;
 }
 
-.food-card p {
-  display: block;
-  margin-bottom: 4px;
-  color: #4a4a4a;
-  font-weight: 400;
-  font-size: 15px;
+.menu-card__title {
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-family: 'Yeseva One', serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.25;
 }
 
-.food-card span {
+.menu-card__description {
   display: block;
-  margin-top: 8px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.menu-card__weight, .menu-card__cost {
+  display: block;
   margin-bottom: 4px;
-  color: #4a4a4a;
-  font-size: 15px;
-  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+/* Card Component */
+
+/* Table Component */
+
+table.menu {
+  margin: 0 -10px 20px -10px;
+  width: 100%;
+}
+
+table.menu tr {
+  transition: background-color .2s linear;
+}
+
+table.menu tr:hover {
+  background-color: rgba(0, 0, 0, .05);
 }
 
 @media (max-width: 768px) {
-  .separator {
-    height: 350px;
-  }
-
-  .section {
-    padding: 0 5% 50px 5%;
-  }
-
-  .section__content .link {
-    margin-top: 12px;
-    font-size: 16px;
-  }
-
-  .section__content img {
-    height: 150px;
-  }
-
-  .btn-group .btn {
-    margin: 12px 0;
-  }
-
-  .food-card {
-    width: 100%;
+  table.menu tr:hover {
+    background-color: inherit;
   }
 }
+
+table.menu th {
+  padding: 14px 10px;
+  height: 28px;
+  font-family: 'Yeseva One', serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  table.menu th {
+    font-size: 12px;
+  }
+}
+
+table.menu th:not(:last-child) {
+  text-align: left;
+}
+
+table.menu th:last-child {
+  text-align: right;
+}
+
+table.menu td:first-child  {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+table.menu td:last-child  {
+  text-align: right;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+table.menu td {
+  padding: 14px 10px;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+@media (max-width: 768px) {
+  table.menu td {
+    font-size: 16px;
+  }
+}
+
+.menu__category {
+  font-family: 'Yeseva One', serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: left !important;
+}
+
+.menu__description {
+  margin-top: 6px;
+  display: block;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .menu__description {
+    font-size: 13px;
+  }
+}
+
+/* Table Component */
