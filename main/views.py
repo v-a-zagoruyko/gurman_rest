@@ -1,3 +1,4 @@
+from django.views.generic import TemplateView
 from django.shortcuts import render
 from .models import *
 
@@ -8,42 +9,34 @@ def Index(request):
 def Tour(request):
     return render(request, 'tour.html', context={})
 
-def MainMenu(request):
-    specimen = MenuSpecimen.objects.get(title='Меню')
+class MenuView(TemplateView):
+    template_name = 'menu.html'
 
-    context = {
-        'specimen': specimen,
-        'menu': Menu.objects.filter(specimen=specimen).order_by('kind'),
-    }
+    def get(self, request, *args, **kwargs):
+        context = self.get_context_data(**kwargs)
+        code = context.get('code')
+        specimen = MenuSpecimen.objects.get(code=code)
+        menu = Menu.objects.filter(specimen=specimen).order_by('category', 'title')
 
-    return render(request, 'menu.html', context=context)
+        context.update({
+            'title': specimen.title,
+            'menu': menu,
+        })
 
-def NewYearMenu(request):
-    specimen = MenuSpecimen.objects.get(title='Новогоднее меню')
+        return self.render_to_response(context)
 
-    context = {
-        'specimen': specimen,
-        'menu': Menu.objects.filter(specimen=specimen).order_by('kind'),
-    }
+class MenuSpecialView(TemplateView):
+    template_name = 'menu_special.html'
 
-    return render(request, 'menu.html', context=context)
+    def get(self, request, *args, **kwargs):
+        context = self.get_context_data(**kwargs)
+        code = context.get('code')
+        specimen = MenuSpecimen.objects.get(code=code)
+        menu = Menu.objects.filter(specimen=specimen).order_by('category', 'title')
 
-def CaucasusMenu(request):
-    specimen = MenuSpecimen.objects.get(title='Кавказская кухня')
+        context.update({
+            'title': specimen.title,
+            'menu': menu,
+        })
 
-    context = {
-        'specimen': specimen,
-        'menu': Menu.objects.filter(specimen=specimen).order_by('kind'),
-    }
-
-    return render(request, 'card_menu.html', context=context)
-
-def DeliveryMenu(request):
-    specimen = MenuSpecimen.objects.get(title='На вынос')
-
-    context = {
-        'specimen': specimen,
-        'menu': Menu.objects.filter(specimen=specimen).order_by('kind'),
-    }
-
-    return render(request, 'menu.html', context=context)
+        return self.render_to_response(context)

@@ -1,7 +1,8 @@
 from django.db import models
 
 class MenuSpecimen(models.Model):
-    title = models.CharField(max_length=64)
+    code = models.CharField(max_length=64, blank=True, null=True, verbose_name='Код')
+    title = models.CharField(max_length=64, verbose_name='Название')
 
     def __str__(self):
         return self.title
@@ -11,7 +12,7 @@ class MenuSpecimen(models.Model):
         verbose_name_plural = 'виды меню'
 
 class MenuCategory(models.Model):
-    title = models.CharField(max_length=64)
+    title = models.CharField(max_length=64, verbose_name='Название')
 
     def __str__(self):
         return self.title
