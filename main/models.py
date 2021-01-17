@@ -23,7 +23,7 @@ class MenuCategory(models.Model):
 
 class Menu(models.Model):
     specimen = models.ManyToManyField(MenuSpecimen, related_name='specimen', verbose_name='Меню')
-    category = models.ForeignKey(MenuCategory, on_delete=models.CASCADE, related_name='category', verbose_name='Тип')
+    category = models.ForeignKey(MenuCategory, on_delete=models.CASCADE, blank=True, null=True, related_name='category', verbose_name='Тип')
     title = models.CharField(max_length=128, verbose_name='Название')
     description = models.CharField(max_length=512, blank=True, null=True, verbose_name='Состав')
     cost = models.PositiveSmallIntegerField(blank=True, null=True, verbose_name='Цена')
