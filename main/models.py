@@ -6,21 +6,32 @@ class MenuSpecimen(models.Model):
     def __str__(self):
         return self.title
 
-class MenuKind(models.Model):
+    class Meta:
+        verbose_name = 'Меню'
+        verbose_name_plural = 'виды меню'
+
+class MenuCategory(models.Model):
     title = models.CharField(max_length=64)
 
     def __str__(self):
         return self.title
 
+    class Meta:
+        verbose_name = 'Тип блюда'
+        verbose_name_plural = 'типы блюд'
+
 class Menu(models.Model):
-    specimen = models.ForeignKey(MenuSpecimen, on_delete=models.CASCADE, blank=True, null=True, related_name='specimen')
-    kind = models.ForeignKey(MenuKind, on_delete=models.CASCADE, blank=True, null=True, related_name='kind')
-    title = models.CharField(max_length=128)
-    description = models.CharField(max_length=512, blank=True, null=True)
-    cost = models.PositiveSmallIntegerField(blank=True, null=True,)
-    sale = models.PositiveSmallIntegerField(blank=True, null=True)
-    weight = models.CharField(max_length=16, blank=True, null=True)
-    image = models.ImageField(upload_to='menu', blank=True, null=True)
+    specimen = models.ManyToManyField(MenuSpecimen, related_name='specimen', verbose_name='Меню')
+    category = models.ForeignKey(MenuCategory, on_delete=models.CASCADE, related_name='category', verbose_name='Тип')
+    title = models.CharField(max_length=128, verbose_name='Название')
+    description = models.CharField(max_length=512, blank=True, null=True, verbose_name='Состав')
+    cost = models.PositiveSmallIntegerField(blank=True, null=True, verbose_name='Цена')
+    weight = models.CharField(max_length=16, blank=True, null=True, verbose_name='Вес (в граммах)')
+    image = models.ImageField(upload_to='menu', blank=True, null=True, verbose_name='Изображение')
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name = 'Блюдо'
+        verbose_name_plural = 'блюда'

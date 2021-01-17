@@ -6,16 +6,18 @@ from .models import *
 class MenuSpecimenAdmin(admin.ModelAdmin):
     list_display = ('title', )
 
-@admin.register(MenuKind)
-class MenuKindAdmin(admin.ModelAdmin):
+@admin.register(MenuCategory)
+class MenuCategoryAdmin(admin.ModelAdmin):
     list_display = ('title', )
 
 @admin.register(Menu)
 class MenuAdmin(admin.ModelAdmin):
-    def image_tag(self, obj):
-        if obj.image:
-            return format_html('<img src="{}" width="50" />'.format(obj.image.url))
+    def specimen_tag(self, obj):
+        list_items = ''
+        for specimen in obj.specimen.all():
+            list_items += f'<li>{specimen}</li>'
+        return format_html('<ul>{}</ul>'.format(list_items))
 
-    image_tag.short_description = ''
+    specimen_tag.short_description = 'Меню'
 
-    list_display = ('image_tag', 'specimen', 'kind', 'title', 'description' )
+    list_display = ('title', 'cost', 'weight', 'category', 'specimen_tag')
