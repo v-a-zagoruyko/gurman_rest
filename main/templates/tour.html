@@ -15,7 +15,7 @@
     />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <link rel="image_src" href="{% static 'indexdata/thumbnail.jpg' %}" />
+    <link rel="image_src" href="{% static 'tour/thumbnail.jpg' %}" />
     <style type="text/css">
       @-ms-viewport {
         width: device-width;
@@ -60,19 +60,19 @@
     </style>
     <script
       type="text/javascript"
-      src="{% static 'indexdata/lib/jquery-2.1.1.min.js' %}"
+      src="{% static 'tour/lib/jquery-2.1.1.min.js' %}"
     ></script>
 
     <style type="text/css">
       div#panoDIV.cursorMoveMode {
         cursor: move;
-        cursor: url(/static/indexdata/graphics/cursors_move_html5.cur), move;
+        cursor: url(/static/tour/graphics/cursors_move_html5.cur), move;
       }
       div#panoDIV.cursorDragMode {
         cursor: grab;
         cursor: -moz-grab;
         cursor: -webkit-grab;
-        cursor: url(/static/indexdata/graphics/cursors_drag_html5.cur), default;
+        cursor: url(/static/tour/graphics/cursors_drag_html5.cur), default;
       }
     </style>
 
@@ -137,7 +137,7 @@
         if (isWebVr) {
           embedpano({
             id: "krpanoSWFObject",
-            xml: "/static/indexdata/index_vr.xml",
+            xml: "/static/tour/index_vr.xml",
             target: "panoDIV",
             passQueryParameters: true,
             bgcolor: "#000000",
@@ -157,7 +157,7 @@
           embedpano({
             id: "krpanoSWFObject",
 
-            swf: "/static/indexdata/index.swf",
+            swf: "/static/tour/index.swf",
 
             target: "panoDIV",
             passQueryParameters: true,
@@ -207,20 +207,20 @@
               classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
               width="100%"
               height="100%"
-              id="indexdata/index"
+              id="tour/index"
             >
-              <param name="movie" value="{% static 'indexdata/index.swf' %}" />
+              <param name="movie" value="{% static 'tour/index.swf' %}" />
               <param name="allowFullScreen" value="true" />
               <!--[if !IE]>-->
               <object
                 type="application/x-shockwave-flash"
-                data="{% static 'indexdata/index.swf' %}"
+                data="{% static 'tour/index.swf' %}"
                 width="100%"
                 height="100%"
               >
                 <param
                   name="movie"
-                  value="{% static 'indexdata/index.swf' %}"
+                  value="{% static 'tour/index.swf' %}"
                 />
                 <param name="allowFullScreen" value="true" />
                 <!--<![endif]-->
@@ -239,7 +239,7 @@
 
         <script
           type="text/javascript"
-          src="{% static 'indexdata/index.js' %}"
+          src="{% static 'tour/index.js' %}"
         ></script>
         <script type="text/javascript">
           if (isVRModeRequested()) {
